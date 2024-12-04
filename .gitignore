@@ -1,0 +1,46 @@
+# Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__
+db.sqlite3
+*.sqlite3
+
+# Virtual Environment
+env/
+venv/
+ENV/
+.venv/
+
+# Django stuff:
+*.log
+*.pot
+*.pyc
+*.pyo
+*.db
+*.sqlite3
+local_settings.py
+db.json
+
+# Static files
+/static/
+# Ignore Tailwind CSS generated files
+/static/css/tailwind.css
+
+# Media files
+/media/
+
+# IDE/editor folders
+.vscode/
+.idea/
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# pytest
+*.coveragerc
+.coverage
+nosetests.xml
+coverage.xml
+*.hypothesis/
