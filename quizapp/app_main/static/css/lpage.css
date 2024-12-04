@@ -6,29 +6,35 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background: #f0f0f0; 
+    background: #FAF0E6; 
   }
+
+  
 
 .strt_button {
     text-align: center; 
 }
 
+
 .start_button {
-    background: var(--button-background, #000); 
+    background: var(--button-background); 
     color: var(--button-text, #fff);
+    font-family: Verdana, Geneva, Tahoma, sans-serif, Courier, monospace;
+    font-size: large;
+    font-weight: bold;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 12px 24px; 
     border-radius: 16px;
     width: 12rem;
-    height: 5rem;
+    height: auto;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
   
   /* Button hover effect */
   .start_button:hover {
-    background-color: var(--button-hover-background, #444);
+    background-color: var(--button-hover-background);
     transform: scale(1.05);/
 }
