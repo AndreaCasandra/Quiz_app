@@ -1,0 +1,67 @@
+@import url('/static/css/color.css');
+
+body {
+    display: flex;
+    font-family: Verdana, Geneva, Tahoma, sans-serif, Courier, monospace;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    align-items: center;
+    background: #FAF0E6;
+}
+
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.form_container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Adds space between form elements */
+}
+
+input[type="text"], input[type="password"], input[type="email"] {
+    padding: 10px;
+    font-size: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 0.5rem;
+}
+
+button[type="submit"] {
+    padding: 10px;
+    font-size: 12px;
+    color: white;
+    background-color: #007BFF; /* Blue button */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 0.5rem;
+    width: 100%;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+
+p {
+    margin-top: 10px;
+    font-size: 14px;
+    text-align: center;
+}
