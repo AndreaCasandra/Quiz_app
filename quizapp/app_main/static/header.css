@@ -1,0 +1,19 @@
+header {
+    width: 100%;
+    height: 75px;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    justify-items: end;
+    padding-right: 50px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    transition: ease-in-out 0.3s;
+}
+
+a:hover {
+    color: aqua;
+}
