@@ -38,8 +38,8 @@
                                           <div class="col-md-6 col-lg-7 d-flex align-items-center">
                                                 <div class="card-body p-4 p-lg-5 text-black">
 
-                                                      <form>
-
+                                                      <form method="POST" action="{% url 'login_view' %}">
+                                                            {% csrf_token %}
                                                             <div class="d-flex align-items-center mb-3 pb-1">
                                                                   <i class="fas fa-user fa-2x me-3"
                                                                         style="color: #181322;"></i>
@@ -47,64 +47,44 @@
                                                             </div>
 
                                                             <h5 class="fw-normal mb-3 pb-3"
-                                                                  style="letter-spacing: 1px;">Welcome back! Please
-                                                                  Login your account.
+                                                                  style="letter-spacing: 1px;">
+                                                                  Welcome back! Please log in to your account.
                                                             </h5>
 
-                                                            <div data-mdb-input-init class="form-outline mb-4">
-                                                                  <input type="email" id="form2Example17"
-                                                                        class="form-control form-control-lg" />
-                                                                  <label class="form-label" for="form2Example17">Email
-                                                                        address</label>
-                                                            </div>
-
-                                                            <div data-mdb-input-init class="form-outline mb-4">
-                                                                  <input type="password" id="form2Example27"
-                                                                        class="form-control form-control-lg" />
+                                                            <!-- Username Input -->
+                                                            <div class="form-outline mb-4">
+                                                                  <input type="text" name="username" id="username"
+                                                                        class="form-control form-control-lg" required />
                                                                   <label class="form-label"
-                                                                        for="form2Example27">Password</label>
-                                                            </div>
-                                                            <p class="text-end"><a class="small text-muted"
-                                                                        href="#!">Forgot password?</a></p>
-                                                            <div class="pt-1 mb-4 d-flex justify-content-center">
-                                                                  <button data-mdb-button-init data-mdb-ripple-init
-                                                                        class="btn btn-dark btn-lg btn-block px-5"
-                                                                        type="button">Login
-                                                                  </button>
-                                                            </div>
-                                                            <div class="position-relative my-4">
-                                                                  <hr class="my-2">
-                                                                  <span
-                                                                        class="position-absolute top-50 start-50 translate-middle bg-white px-3 fw-bold">or
-                                                                        login with
-                                                                  </span>
+                                                                        for="username">Username</label>
                                                             </div>
 
-
-                                                            <div
-                                                                  class="d-flex mt-3 justify-content-evenly text-center mt-4 pt-1">
-                                                                  <a href="#!" class="text-white">
-                                                                        <i class="shadow-lg fab fa-facebook-f fa-lg "
-                                                                              style="color: black; border: 1px solid black; padding: 20px; border-radius: 10%;"></i>
-                                                                  </a>
-
-                                                                  <a href="#!" class="text-white">
-                                                                        <i class="shadow-lg fab fa-google fa-lg"
-                                                                              style="color: black; border: 1px solid black; padding: 20px; border-radius: 10%;"></i>
-                                                                  </a>
+                                                            <!-- Password Input -->
+                                                            <div class="form-outline mb-4">
+                                                                  <input type="password" name="password" id="password"
+                                                                        class="form-control form-control-lg" required />
+                                                                  <label class="form-label"
+                                                                        for="password">Password</label>
                                                             </div>
 
-
-
-                                                            <p class="mt-5 mb-5 pb-lg-2" style="color: #393f81;">Don't
-                                                                  have
-                                                                  an account?
-                                                                  <a href="/register" style="color: #393f81;">Register
-                                                                        here
-                                                                  </a>
+                                                            <p class="text-end">
+                                                                  <a class="small text-muted" href="#!">Forgot
+                                                                        password?</a>
                                                             </p>
 
+                                                            <!-- Submit Button -->
+                                                            <div class="pt-1 mb-4 d-flex justify-content-center">
+                                                                  <button class="btn btn-dark btn-lg btn-block px-5"
+                                                                        type="submit">Login</button>
+                                                            </div>
+
+                                                            <p class="mt-5 mb-5 pb-lg-2" style="color: #393f81;">
+                                                                  Don't have an account?
+                                                                  <a href="{% url 'register_view' %}"
+                                                                        style="color: #393f81;">Register here</a>
+                                                            </p>
                                                       </form>
+
 
                                                 </div>
                                           </div>
