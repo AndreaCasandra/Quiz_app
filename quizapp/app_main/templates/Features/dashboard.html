@@ -12,13 +12,13 @@
       <header class="bg-purple-600 text-white py-4 shadow-lg">
             <div class="container mx-auto px-4 flex justify-between items-center">
                   <h1 class="text-2xl font-bold">Quiz Dashboard</h1>
-                  <form action="{% url 'login_view' %}" method="POST" class="inline">
+                  <form action="{% url 'logout' %}" method="POST" class="inline">
                         {% csrf_token %}
-                        <button type="submit"
-                              class="bg-white text-purple-600 px-4 py-2 rounded-lg font-semibold hover:bg-gray-100">
-                              Logout
+                        <button type="submit" class="bg-white text-purple-600 px-4 py-2 rounded-lg font-semibold hover:bg-gray-100">
+                            Logout
                         </button>
-                  </form>
+                    </form>
+                    
             </div>
       </header>
 
