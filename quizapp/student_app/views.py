@@ -1,10 +1,11 @@
 from django.shortcuts import render
 
 # Create your views here.
+# quiz_home dashboard
+def dashboard(request):
+    return render(request, 'student_dashboard.html')
 
-from django.shortcuts import render, HttpResponse, redirect
+def user_dashboard(request):
+    return render(request, 'user_dashboard.html')
 
-# Create your views here.
-def home_stdnt (request):
-    return render(request, 'home_stdnt.html')
 

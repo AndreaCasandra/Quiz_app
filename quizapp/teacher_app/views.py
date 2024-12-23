@@ -1,8 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from django.urls import reverse
 
-# Create your views here.
-
-
-def home_tchrs(request):
-    return render(request, 'home_tchrs.html')
-
+# quiz_home dashboard
+def dashboard(request):
+    return render(request, 'teacher_dashboard.html')
