@@ -81,12 +81,18 @@
                         <div class="bg-gray-100 p-6 rounded border">
                               <h3 class="text-xl font-medium mb-4">Your Classes</h3>
                               <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                    {% for class in classes %}
                                     <div class="bg-white p-4 rounded shadow">
-                                          <h4 class="font-bold text-lg">Math 101</h4>
-                                          <p class="text-gray-600">25 Students</p>
-                                          <a href="{% url 'manage_class' class_id=1 %}"
+                                          <h4 class="font-bold text-lg">{{ class.name }}</h4>
+                                          <p class="text-gray-600">{{ class.students.count }} Students</p>
+                                          <a href="{% url 'manage_class' class.id %}"
                                                 class="text-blue-600 hover:underline mt-2">Manage Class</a>
                                     </div>
+                                    {% empty %}
+                                    <p class="text-gray-600">You have no classes yet.</p>
+                                    {% endfor %}
+
+
                               </div>
                         </div>
                   </section>
@@ -102,18 +108,21 @@
                         <div class="bg-gray-100 p-6 rounded border">
                               <h3 class="text-xl font-medium mb-4">Your Quizzes</h3>
                               <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    {% for quiz in quizzes %}
                                     <div class="bg-white p-4 rounded shadow">
-                                          <h4 class="font-bold text-lg">Math Quiz 1</h4>
-                                          <p class="text-gray-600">Assigned to: Math 101</p>
-                                          <a href="{% url 'view_results' quiz_id=1 %}"
+                                          <h4 class="font-bold text-lg">{{ quiz.title }}</h4>
+                                          <p class="text-gray-600">Assigned to: {{ quiz.assigned_class.name }}</p>
+                                          <a href="{% url 'view_results' quiz.id %}"
                                                 class="text-green-600 hover:underline mt-2">View Results</a>
                                     </div>
+                                    {% empty %}
+                                    <p class="text-gray-600">You have no quizzes yet.</p>
+                                    {% endfor %}
                               </div>
                         </div>
                   </section>
 
-
-                  <!-- Reports -->
+                  <!-- Reports Section -->
                   <section id="reports" class="bg-white p-8 rounded-lg shadow-md">
                         <h2 class="text-2xl font-semibold mb-6">Reports</h2>
                         <p class="text-gray-600">Generate and download reports for quizzes:</p>
