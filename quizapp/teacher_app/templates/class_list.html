@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Class List</title>
+</head>
+<body>
+    <div class="container mx-auto mt-10">
+        <div class="flex items-center justify-between mb-4">
+            <!-- Back Button and Title -->
+            <a href="{% url 'teachers_dashboard' %}" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300">Back</a>
+            <h1 class="text-2xl font-bold">My Classes</h1>
+        </div>
+
+        <ul class="mt-4">
+            {% for class in classes %}
+                <li class="mb-4 border rounded-md p-4">
+                    <h2 class="text-xl font-semibold">{{ class.name }}</h2>
+                    {% if class.join_code %}
+                        <p class="text-gray-600">Join Code: {{ class.join_code }}</p>
+                    {% else %}
+                        <form method="POST" action="{% url 'generate_join_code' class.id %}">
+                            {% csrf_token %}
+                            <button class="bg-green-500 text-white px-4 py-2 rounded-md">Generate Join Code</button>
+                        </form>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
